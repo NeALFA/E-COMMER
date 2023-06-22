@@ -1,0 +1,81 @@
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+@use "../base/typography";
+
+.navbar {
+  @include mix.df(space-between, center, row);
+  position: sticky;
+  padding: 13px 0;
+  gap: 40px;
+  .nav-left {
+    @include mix.df(space-between, center, row);
+    gap: 50px;
+    .nav-hamburger {
+      @include mix.df(space-between, center, row);
+      gap: 16px;
+      button {
+        @include mix.df(center, center, row);
+        gap: 10px;
+        width: 140px;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: #70c05b;
+        p {
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: #ffffff;
+        }
+      }
+      input {
+        width: 360px;
+        height: 40px;
+        background: #ffffff;
+        border: 1px solid #70c05b;
+        border-radius: 4px;
+        &::placeholder {
+          display: flex;
+          align-items: center;
+          color: #8f8f8f;
+          padding-left: 18px;
+        }
+      }
+    }
+  }
+  .nav-right {
+    @include mix.df(center, center, row);
+    gap: 24px;
+    &-like a,
+    &-product a,
+    &-basket a {
+      @include mix.df(center, center, column);
+      gap: 10px;
+      p {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: #414141;
+      }
+    }
+    &-login {
+      @include mix.df(center, center, row);
+      gap: 10px;
+      padding-left: 40px;
+      padding-right: 30px;
+      p {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        display: flex;
+        align-items: center;
+        color: #232323;
+      }
+    }
+  }
+}

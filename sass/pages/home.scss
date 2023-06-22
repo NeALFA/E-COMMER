@@ -1,0 +1,212 @@
+@use "../global";
+@use "../layout/header";
+@use "../base/typography";
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+
+#home {
+  background-image: url(../../images/home/home-img.png);
+  .home {
+    @include mix.df(center, center, row);
+    h1 {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      font-size: var.$font48;
+      line-height: 150%;
+      color: var(--fontColor-black);
+    }
+  }
+}
+
+#stock {
+  background-color: var(--main-bg);
+  .stock {
+    &__header {
+      @include mix.df(space-between, end);
+      h2 {
+        @include mix.title-2;
+      }
+      a {
+        @include mix.df(center);
+        gap: 16.5px;
+        p {
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: var(--color-grey);
+        }
+      }
+    }
+    &__footer {
+      padding-top: 40px;
+      @include mix.df(space-between, center, row);
+      flex-wrap: wrap;
+      gap: 40px;
+      &--card {
+        max-width: 272px;
+        background-color: #fff;
+        position: relative;
+        .card-like-img {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+        }
+        .card--price {
+          padding: 8px;
+          @include mix.df(space-between, center, row);
+          a {
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 150%;
+            color: #414141;
+            p {
+              font-family: "Rubik";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 150%;
+              color: #bfbfbf;
+            }
+          }
+          .a-two {
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: #606060;
+          }
+        }
+        .card--button {
+          padding: 8px;
+          @include mix.df(start, start, column);
+          gap: 8px;
+          p {
+            height: 48px;
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: #414141;
+          }
+          button {
+            @include mix.card-btn;
+          }
+        }
+      }
+    }
+  }
+}
+
+#special {
+  background-color: var(--main-bg);
+  .special {
+    padding-top: 120px;
+    &__header {
+      h2 {
+        @include mix.title-2;
+      }
+    }
+    &__footer {
+      padding-top: 40px;
+      padding-bottom: 150px;
+      @include mix.df(space-between, center, row);
+      gap: 40px;
+      .special__card {
+        &:first-child {
+          background: #fcd5ba;
+        }
+        &:last-child {
+          background: #e5ffde;
+        }
+        @include mix.df(center, center, row);
+        gap: 21px;
+        max-width: 584px;
+        padding: 8px 32px 8px 40px;
+        border-radius: 4px;
+        &--left {
+          h3 {
+            width: 258px;
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 150%;
+            color: #414141;
+          }
+          p {
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: #414141;
+          }
+        }
+      }
+    }
+  }
+}
+
+#adress {
+  background-color: var(--main-bg);
+  .adress {
+    &__header {
+      h2 {
+        @include mix.title-2;
+      }
+    }
+    &__footer {
+      .adress--button {
+        @include mix.df(start, center, row);
+        gap: 24px;
+        padding-top: 40px;
+        padding-bottom: 24px;
+        button {
+          width: 97px;
+          height: 32px;
+          background: #f3f2f1;
+          border-radius: 4px;
+          padding: 8px;
+
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 150%;
+          color: #606060;
+        }
+      }
+    }
+  }
+}
+
+#articles {
+  background-color: var(--main-bg);
+  .articles {
+    &__header {
+      @include mix.df(space-between, end);
+      h2 {
+        @include mix.title-2;
+      }
+      a {
+        @include mix.df(center);
+        gap: 16.5px;
+        p {
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: var(--color-grey);
+        }
+      }
+    }
+  }
+}
