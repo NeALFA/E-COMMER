@@ -2,80 +2,140 @@
 @use "../utils/variables" as var;
 @use "../base/typography";
 
-.navbar {
-  @include mix.df(space-between, center, row);
+header {
   position: sticky;
-  padding: 13px 0;
-  gap: 40px;
-  .nav-left {
+  z-index: 9999999;
+  top: 0;
+  background-color: #ffffff;
+  box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.1);
+  .navbar {
     @include mix.df(space-between, center, row);
-    gap: 50px;
-    .nav-hamburger {
+    padding: 13px 0;
+    gap: 40px;
+    .nav-left {
       @include mix.df(space-between, center, row);
-      gap: 16px;
-      button {
+      gap: 50px;
+      @media (max-width: 1050px) {
+        @include mix.df(space-between, center, row);
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+      }
+      .nav-hamburger {
+        @include mix.df(space-between, center, row);
+        gap: 16px;
+        button {
+          @include mix.df(center, center, row);
+          gap: 10px;
+          max-width: 140px;
+          padding: 8px;
+          border-radius: 4px;
+          background-color: #70c05b;
+          p {
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: #ffffff;
+            @media (max-width: 1200px) {
+              display: none;
+            }
+          }
+          @media (max-width: 650px) {
+            display: none;
+          }
+        }
+        input {
+          width: 360px;
+          height: 40px;
+          background: #ffffff;
+          border: 1px solid #70c05b;
+          border-radius: 4px;
+          @media (max-width: 650px) {
+            width: 100%;
+          }
+          &::placeholder {
+            display: flex;
+            align-items: center;
+            color: #8f8f8f;
+            padding-left: 18px;
+          }
+        }
+      }
+    }
+    .nav-right {
+      @include mix.df(space-between, center, row);
+      gap: 24px;
+      width: 100%;
+      &-hamburg button,
+      &-like a,
+      &-product a,
+      &-basket a {
+        @include mix.df(center, center, column);
+        gap: 10px;
+        background-color: #fff;
+        p {
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 150%;
+          color: #414141;
+        }
+      }
+      &-hamburg button {
+        display: none;
+      }
+      &-login {
         @include mix.df(center, center, row);
         gap: 10px;
-        width: 140px;
-        padding: 8px;
-        border-radius: 4px;
-        background-color: #70c05b;
         p {
           font-family: "Rubik";
           font-style: normal;
           font-weight: 400;
           font-size: 16px;
           line-height: 150%;
-          color: #ffffff;
-        }
-      }
-      input {
-        width: 360px;
-        height: 40px;
-        background: #ffffff;
-        border: 1px solid #70c05b;
-        border-radius: 4px;
-        &::placeholder {
           display: flex;
           align-items: center;
-          color: #8f8f8f;
-          padding-left: 18px;
+          color: #232323;
+          @media (max-width: 650px) {
+            display: none;
+          }
+        }
+      }
+      @media (max-width: 1050px) {
+        @include mix.df(space-between, center, row);
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+        position: fixed;
+        z-index: 999999;
+        bottom: 0px;
+      }
+      @media (max-width: 700px) {
+        &-hamburg button {
+          display: block;
         }
       }
     }
   }
-  .nav-right {
-    @include mix.df(center, center, row);
-    gap: 24px;
-    &-like a,
-    &-product a,
-    &-basket a {
-      @include mix.df(center, center, column);
-      gap: 10px;
-      p {
-        font-family: "Rubik";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 150%;
-        color: #414141;
-      }
-    }
-    &-login {
-      @include mix.df(center, center, row);
-      gap: 10px;
-      padding-left: 40px;
-      padding-right: 30px;
-      p {
-        font-family: "Rubik";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        display: flex;
-        align-items: center;
-        color: #232323;
-      }
+  .toggle {
+    @include mix.df(space-between, start, row);
+    flex-wrap: wrap;
+    height: 0px;
+    overflow: hidden;
+    transition: .3s linear;
+    padding: 0;
+    gap: 40px;
+    row-gap: 24px;
+    a {
+      width: 272px;
+      color: var(--fontColor-black);
+      font-size: 16px;
+      font-family: "Rubik";
+      font-weight: 700;
+      line-height: 150%;
     }
   }
 }

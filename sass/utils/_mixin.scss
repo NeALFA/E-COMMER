@@ -8,7 +8,8 @@
   flex-direction: $fd;
 }
 @mixin card-btn($width: 256px, $height: 40px) {
-  width: $width;
+  max-width: $width;
+  width: 100%;
   height: $height;
   text-align: center;
   font-family: "Rubik";

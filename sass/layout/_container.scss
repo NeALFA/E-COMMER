@@ -3,7 +3,7 @@
 
 .container {
   max-width: func.container(1440, 116, var.$mobilePadding);
-  padding-left: var.$mobilePadding;
-  padding-right: var.$mobilePadding;
+  padding-left: var.$mobilePadding + px;
+  padding-right: var.$mobilePadding + px;
   margin: 0 auto;
 }
