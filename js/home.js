@@ -155,7 +155,7 @@ let RatingProducts = productsCopy
 
 document.querySelector(".bought__footer").innerHTML = lastRatingProducts;
 
-const tabBTN = document.querySelectorAll(".tab-button");
+const tabBTN = document.querySelectorAll(".tab-button button");
 const tabContent = document.querySelectorAll(".tab-content");
 
 let active = 0;
