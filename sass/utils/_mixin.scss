@@ -30,7 +30,11 @@
     border: 1px solid var(--color-orange);
   }
 }
-
+@mixin btn($width, $bgc) {
+  max-width: $width;
+  background-color: $bgc;
+  border-radius: 4px;
+}
 @mixin title-2 {
   font-family: "Rubik";
   font-style: normal;

@@ -15,7 +15,7 @@ header {
     .nav-left {
       @include mix.df(space-between, center, row);
       gap: 50px;
-      @media (max-width: 1050px) {
+      @media (max-width: 1100px) {
         @include mix.df(space-between, center, row);
         background-color: #fff;
         width: 100%;
@@ -42,24 +42,75 @@ header {
               display: none;
             }
           }
-          @media (max-width: 650px) {
+          @media (max-width: 700px) {
             display: none;
           }
         }
-        input {
-          width: 360px;
-          height: 40px;
-          background: #ffffff;
-          border: 1px solid #70c05b;
-          border-radius: 4px;
-          @media (max-width: 650px) {
-            width: 100%;
+        .search__input {
+          position: relative;
+          .search__input2 {
+            position: absolute;
+            display: none;
+            overflow: auto;
+            width: 360px;
+            @media (max-width: 650px) {
+              width: 100%;
+            }
+            background-color: rgba(200, 200, 200, 0.9);
+            padding: 18px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
           }
-          &::placeholder {
-            display: flex;
-            align-items: center;
-            color: #8f8f8f;
+          .search-input {
+            width: 360px;
+            height: 40px;
+            background: #ffffff;
+            border: 1px solid #70c05b;
+            border-radius: 4px;
             padding-left: 18px;
+            color: var(--fontColor-black);
+            font-size: 18px;
+            font-family: "Rubik";
+            font-weight: 700;
+            line-height: 150%;
+            color: #70c05b;
+            padding-right: 18px;
+            @media (max-width: 650px) {
+              width: 100%;
+            }
+            &::placeholder {
+              display: flex;
+              align-items: center;
+              color: #8f8f8f;
+            }
+          }
+          .search__input-box {
+            .search__input-card {
+              @include mix.df(start, center, row);
+              gap: 10px;
+              border-bottom: 1px solid #000;
+              padding: 15px;
+              img {
+                max-width: 70px;
+                border-radius: 5px;
+              }
+              h3 {
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                padding: 0 5px;
+                color: black;
+                font-size: 25px;
+                font-family: "Rubik";
+                font-weight: 700;
+                line-height: 150%;
+              }
+              p {
+                color: var(--color-grey);
+                font-size: 25px;
+                font-family: "Rubik";
+                line-height: 150%;
+              }
+            }
           }
         }
       }
@@ -104,7 +155,7 @@ header {
           }
         }
       }
-      @media (max-width: 1050px) {
+      @media (max-width: 1100px) {
         @include mix.df(space-between, center, row);
         background-color: #fff;
         width: 100%;
@@ -125,7 +176,7 @@ header {
     flex-wrap: wrap;
     height: 0px;
     overflow: hidden;
-    transition: .3s linear;
+    transition: 0.3s linear;
     padding: 0;
     gap: 40px;
     row-gap: 24px;
@@ -136,6 +187,122 @@ header {
       font-family: "Rubik";
       font-weight: 700;
       line-height: 150%;
+    }
+  }
+}
+
+#modal {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  margin-top: -1500px;
+  opacity:0;
+  transition: 0.5s;
+  background: rgba(252, 213, 186, 0.8);
+  @include mix.df(center, center, row);
+  width: 100%;
+  .modal {
+    position: fixed;
+    top: calc(100% - height);
+    left: 0;
+    right: 0;
+    bottom: calc(100% - height);
+    height: auto;
+    @include mix.df(center, center, column);
+    gap: 32px;
+    max-width: 420px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 8px 16px 32px 0px rgba(255, 102, 51, 0.2);
+    h2 {
+      padding-top: 56px;
+      color: var(--fontColor-black);
+      text-align: center;
+      font-size: 24px;
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 4px;
+      background: #f3f2f1;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .modal__input {
+      @include mix.df(center, start, column);
+      width: 100%;
+      padding-left: 60px;
+      padding-right: 60px;
+      label {
+        color: var(--inp-grey);
+        font-size: 18px;
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+      }
+      input {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid red;
+        &:focus {
+          box-shadow: 4px 8px 16px 0px rgba(112, 192, 91, 0.2);
+          border: 1px solid var(--main-secondary, #70c05b);
+        }
+      }
+    }
+    .modal__btn {
+      @include mix.df(center, center, column);
+      gap: 32px;
+      .enter-btn {
+        @include mix.btn(260px, #fcd5ba);
+        padding: 16px;
+        width: 260px;
+        color: #f63;
+        text-align: center;
+        font-size: 24px;
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+      }
+      div {
+        @include mix.df(space-between, center, row);
+        width: 100%;
+        gap: 16px;
+        margin-bottom: 40px;
+        .registr-btn {
+          @include mix.btn(121px, transparent);
+          width: 121px;
+          padding: 8px;
+          border: 1px solid var(--main-secondary, #70c05b);
+          color: var(--color-green);
+          font-size: 12px;
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+        }
+        a {
+          padding: 8px;
+          color: var(--color-grey);
+          text-align: center;
+          font-size: 12px;
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+        }
+      }
     }
   }
 }

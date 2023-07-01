@@ -1,0 +1,116 @@
+@use "../global";
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+@use "../base/typography";
+
+#catalog {
+  background-color: var(--main-bg);
+  .catalog {
+    padding-top: 44px;
+    &__header {
+      h2 {
+        @include mix.title-2;
+      }
+    }
+    &__footer {
+      padding-top: 40px;
+      padding-bottom: 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+      @media (max-width: 700px) {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      @media (max-width: 00px) {
+        grid-template-columns: repeat(1, 1fr) !important;
+      }
+      &--card {
+        position: relative;
+        max-height: 300px;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+        &:first-child {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+        &:nth-child(10) {
+          grid-column-start: 3;
+          grid-column-end: 5;
+        }
+        &:nth-child(12) {
+          grid-column-start: 2;
+          grid-column-end: 4;
+        }
+        @media (max-width: 900px) {
+          &:first-child {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+          &:nth-child(10) {
+            grid-column-start: 2;
+            grid-column-end: 4;
+          }
+          &:nth-child(11) {
+            grid-column-start: 1;
+            grid-column-end: 4;
+          }
+          &:nth-child(12) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+        }
+        @media (max-width: 700px) {
+          &:first-child {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+          &:nth-child(10) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+          &:nth-child(11) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+          &:nth-child(12) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+        }
+        a {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          color: #fff;
+          width: 100%;
+          height: 90%;
+          @include mix.df(start, end, row);
+          padding-left: 10px;
+          padding-bottom: 10px;
+          font-size: 18px;
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 700;
+          line-height: 150%;
+          background: linear-gradient(
+            180deg,
+            rgba(112, 192, 91, 0) 0%,
+            #70c05b 82.81%
+          );
+          &:hover {
+            background: linear-gradient(
+              180deg,
+              rgba(255, 102, 51, 0) 0%,
+              #f63 100%
+            );
+          }
+        }
+      }
+    }
+  }
+}

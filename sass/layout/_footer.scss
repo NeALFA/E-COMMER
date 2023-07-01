@@ -4,7 +4,7 @@
 
 footer {
   background-color: var(--color-footer);
-  background-image: url(../../images/home/home-img-2.png);
+  background-image: url(../../assets/images/home/home-img-2.png);
   .footer {
     @include mix.df(space-between, center, row);
     padding-top: 24px;
