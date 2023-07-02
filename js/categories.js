@@ -38,15 +38,14 @@ closeBtn.addEventListener("click", function () {
     modal.style.opacity = "0";
     modal.style.zIndex = "-999999";
   }
-});
+}); 
 
 let card = "";
 
 categories.map((item) => {
   card += `<div class="catalog__footer--card">
   <img src="${item.image}" alt="" />
-    <a onclick="localStorage.setItem('category', '${item.name}')" href="#">${item.name}</a>
+    <a onclick="localStorage.setItem('category', '${item.name}')" href="./catalog-product.html">${item.name}</a>
   </div>`;
   document.querySelector(".catalog__footer").innerHTML = card;
 });
-console.log(localStorage.getItem("category"));

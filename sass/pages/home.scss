@@ -111,6 +111,10 @@
           @include mix.df(start, start, column);
           gap: 8px;
           p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
             font-family: "Rubik";
             font-style: normal;
             font-weight: 400;
@@ -245,6 +249,7 @@
     }
     &__footer {
       padding-top: 120px;
+      padding-bottom: 80px;
       @include mix.df(space-between, center, center);
       gap: 40px;
       flex-wrap: wrap;

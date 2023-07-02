@@ -1,17 +1,23 @@
-const btn = document.querySelector(".nav-hamburger button img");
+///////// Dropdown toggle code start
+
+const btn = document.querySelectorAll(".nav-hamburger button img");
 const toggle = document.querySelector(".toggle");
 
-btn.addEventListener("click", () => {
-  if (toggle.style.height == "0px") {
-    toggle.style.height = "auto";
-    toggle.style.paddingTop = "40px";
-    toggle.style.paddingBottom = "40px";
-  } else {
-    toggle.style.height = "0";
-    toggle.style.paddingTop = "0";
-    toggle.style.paddingBottom = "0";
-  }
-});
+btn.forEach((el) =>
+  el.addEventListener("click", () => {
+    if (toggle.style.height == "0px") {
+      toggle.style.height = "auto";
+      toggle.style.paddingTop = "40px";
+      toggle.style.paddingBottom = "40px";
+    } else {
+      toggle.style.height = "0";
+      toggle.style.paddingTop = "0";
+      toggle.style.paddingBottom = "0";
+    }
+  })
+);
+// Dropdown toggle code end
+///////// Discount card code start
 
 let htmlDiscountProducts = "";
 products
@@ -66,6 +72,8 @@ products
     `;
   });
 document.querySelector(".stock__footer").innerHTML = htmlDiscountProducts;
+// Discoun card code end
+///////// NewCard code start
 
 let newLastProducts = "";
 
@@ -108,6 +116,8 @@ products.slice(-4).map((item) => {
 });
 
 document.querySelector(".novinki__footer").innerHTML = newLastProducts;
+// NewCard code end
+///////// Rating card code start
 
 let lastRatingProducts = "";
 let productsCopy = [...products];
@@ -146,7 +156,7 @@ let RatingProducts = productsCopy
         .map((el) => {
           return `<img src="./assets/images/home/star-2.svg" alt="" />`;
         })
-        .join("")} ${item.rating}
+        .join("")}
   </div>
   <button>В корзину</button>
 </div>
@@ -154,6 +164,8 @@ let RatingProducts = productsCopy
   );
 
 document.querySelector(".bought__footer").innerHTML = lastRatingProducts;
+// Rating card code  end
+///////// Ap-Tab code start
 
 const tabBTN = document.querySelectorAll(".tab-button button");
 const tabContent = document.querySelectorAll(".tab-content");
@@ -180,6 +192,8 @@ tabBTN.forEach((el, i) => {
     btnTAB();
   });
 });
+// Ap-Tab code end
+///////// Search code start
 
 const searchInput = document.querySelector(".search-input");
 searchInput.addEventListener("input", () => {
@@ -204,6 +218,8 @@ searchInput.addEventListener("input", () => {
   });
   document.querySelector(".search__input2").innerHTML = searchInputProducts;
 });
+// Search code end
+///////// Modal code start
 
 const login = document.querySelector(".nav-right-login");
 const modal = document.querySelector("#modal");
@@ -222,3 +238,4 @@ closeBtn.addEventListener("click", function () {
     modal.style.zIndex = "-999999";
   }
 });
+// Modal code end
