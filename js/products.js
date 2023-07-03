@@ -18,7 +18,7 @@ function allProducts() {
   let productsAll = "";
   products.map((item) => {
     productsAll += `
-    <div class="product__footer--card">
+    <div class="product__footer--card card">
     <div class="card--img">
       <img src="${item.images[0]}" alt="" />
       <img
@@ -82,7 +82,7 @@ let pages;
 
 function getProductCard(item) {
   return `
-    <div class="product__footer--card">
+    <div class="product__footer--card card">
     <div class="card--img">
       <img src="${item.images[0]}" alt="" />
       <img

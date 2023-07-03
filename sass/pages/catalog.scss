@@ -1,4 +1,6 @@
 @use "../global";
+@use "../components/card";
+@use "../components/bread-crump";
 @use "../utils/mixin" as mix;
 @use "../utils/variables" as var;
 @use "../base/typography";

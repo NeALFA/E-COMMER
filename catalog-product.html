@@ -109,13 +109,53 @@
       </section>
     </header>
     <main>
+      <section class="bread-crump">
+        <div class="item container">
+          <a href="index.html">Главная</a>
+          <img src="./assets/images/categories/next.svg" alt="" />
+          <a href="catalog.html">Каталог</a>
+          <img src="./assets/images/categories/next.svg" alt="" />
+          <a href="catalog-product.html">Молоко, сыр, яйцо</a>
+        </div>
+      </section>
       <section id="catalog">
         <div class="catalog container">
           <div class="catalog__header">
             <h2>Каталог</h2>
           </div>
-          <div class="catalog__footer-product stock__footer">
-            
+          <div class="catalog__footer">
+            <div class="catalog__footer-filter">
+              <h3>Фильтр</h3>
+              <div class="filter-body">
+                <div class="filter-body-title">
+                  <h4>Цена</h4>
+                  <button>Очистить</button>
+                </div>
+                <div class="number-input">
+                  <input type="number" placeholder="1" />
+                  <input type="number" placeholder="100" />
+                </div>
+              </div>
+              <div class="filter-footer">   
+                <!-- <input
+                  type="range"
+                  class="min"
+                  min="0"
+                  max="1000"
+                  value="300"
+                  step="10"
+                /> -->
+                <input
+                  type="range"
+                  class="max"
+                  min="0"
+                  max="1000"
+                  value="700"
+                  step="10"
+                />
+              </div>
+            </div>
+            <div class="catalog__footer-product"></div>
           </div>
         </div>
       </section>
@@ -150,6 +190,6 @@
     </footer>
     <script src="./js/categories-data.js"></script>
     <script src="./js/products-data.js"></script>
-    <script src="./js/category.js"></script>
+    <script src="./js/catalog-product.js"></script>
   </body>
 </html>

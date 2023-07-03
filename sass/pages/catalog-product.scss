@@ -1,4 +1,6 @@
 @use "../global";
+@use "../components/card";
+@use "../components/bread-crump";
 @use "../utils/mixin" as mix;
 @use "../utils/variables" as var;
 @use "../base/typography";
@@ -12,83 +14,91 @@
         @include mix.title-2;
       }
     }
-    .stock__footer {
+    &__footer {
+      @include mix.df(start, start, row);
+      gap: 40px;
       padding-top: 40px;
       padding-bottom: 80px;
-      @include mix.df(start, center, row);
-      flex-wrap: wrap;
-      gap: 40px;
-      &--card {
-        max-width: 262px;
-        width: 100%;
-        background-color: #fff;
-        position: relative;
-        .card--img {
-          position: relative;
-        }
-        .discount {
-          position: absolute;
-          bottom: 10px;
-          left: 10px;
-          width: 56px;
+      &-filter {
+        max-width: 272px;
+        h3 {
+          width: 272px;
+          padding: 10px;
           border-radius: 4px;
-          padding: 4px 8px;
-          background: var(--color-orange);
-          color: #fff;
           font-size: 16px;
           font-family: "Rubik";
+          font-style: normal;
+          font-weight: 700;
           line-height: 150%;
+          background: #f3f2f1;
+          color: var(--fontColor-black);
         }
-        .card-like-img {
-          position: absolute;
-          top: 8px;
-          right: 8px;
-        }
-        .card--price {
-          width: 262px;
-          padding: 8px;
-          @include mix.df(space-between, space-between, row);
-          a {
-            font-family: "Rubik";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 150%;
-            color: #414141;
-            p {
-              font-family: "Rubik";
-              font-style: normal;
-              font-weight: 400;
-              font-size: 12px;
-              line-height: 150%;
-              color: #bfbfbf;
-            }
-          }
-          .a-two {
+        .filter-body-title {
+          padding: 40px 13px;
+          @include mix.df(space-between, center, row);
+          h4 {
+            color: #000;
+            font-size: 16px;
             font-family: "Rubik";
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
             line-height: 150%;
-            color: #606060;
-          }
-        }
-        .card--button {
-          padding: 8px;
-          @include mix.df(start, start, column);
-          gap: 8px;
-          p {
-            font-family: "Rubik";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 150%;
-            color: #414141;
           }
           button {
-            @include mix.card-btn;
+            width: 85px;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            color: var(--color-grey);
           }
         }
+        .number-input {
+          @include mix.df(space-between, center, row);
+          gap: 25px;
+          position: relative;
+          input {
+            max-width: 124px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid var(--grayscale-light, #bfbfbf);
+            background: var(--main-surface, #fff);
+          }
+        }
+        .filter-footer {
+          padding-top: 25px;
+          position: relative;
+          input {
+            -webkit-appearance: none;
+            width: 100%;
+            &::-webkit-slider-runnable-track {
+              height: 7px;
+              cursor: pointer;
+              background: #2403ff;
+              border-radius: 14px;
+            }
+          }
+          input::-webkit-slider-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background:red;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -9.5px;
+          }
+          input:focus::-webkit-slider-runnable-track {
+            background: red;
+          }
+        }
+      }
+      &-product {
+        @include mix.df(space-between, center, row);
+        flex-wrap: wrap;
+        gap: 40px;
       }
     }
   }

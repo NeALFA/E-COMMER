@@ -1,11 +1,25 @@
-// const cardProduct = document.querySelector(".catalog__footer-product")
 const categorys = localStorage.getItem("category");
 
-let cardProduct = "";
+///// BreadCrupm code start
 
-products.filter((el)=>el.category === categorys).map((item) => {
-  cardProduct += `
-    <div class="stock__footer--card">
+let breadCrump = "";
+breadCrump += `  
+    <a href="index.html">Главная</a>
+    <img src="./assets/images/categories/next.svg" alt="" />
+    <a href="catalog.html">Каталог</a>      
+    <img src="./assets/images/categories/next.svg" alt="" />
+    <a href="catalog-product.html">${categorys}</a>
+     `;
+document.querySelector(".item").innerHTML = breadCrump;
+// BreadCrupm code end
+///// Card Product code start
+
+let cardProduct = "";
+products
+  .filter((el) => el.category === categorys)
+  .map((item) => {
+    cardProduct += `
+    <div class="stock__footer--card card">
     <div class="card--img">
       <img src="${item.images[0]}" alt="" />
       <img
@@ -40,15 +54,15 @@ products.filter((el)=>el.category === categorys).map((item) => {
           return `<img src="./assets/images/home/star-1.svg" alt="" />`;
         })
         .join("")}${Array(Math.round(5 - item.rating))
-    .fill(0)
-    .map((el) => {
-      return `<img src="./assets/images/home/star-2.svg" alt="" />`;
-    })
-    .join("")}
+      .fill(0)
+      .map((el) => {
+        return `<img src="./assets/images/home/star-2.svg" alt="" />`;
+      })
+      .join("")}
       </div>
       <button>В корзину</button>
     </div>
   </div>
     `;
-  document.querySelector(".catalog__footer-product").innerHTML = cardProduct;
-});
+    document.querySelector(".catalog__footer-product").innerHTML = cardProduct;
+  });

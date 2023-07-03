@@ -1,4 +1,5 @@
 @use "../global";
+@use "../components/card";
 @use "../utils/mixin" as mix;
 @use "../utils/variables" as var;
 
@@ -16,82 +17,6 @@
       @include mix.df(center, center, row);
       flex-wrap: wrap;
       gap: 40px;
-      &--card {
-        max-width: 262px;
-        width: 100%;
-        background-color: #fff;
-        position: relative;
-        .card--img {
-          position: relative;
-        }
-        .discount {
-          position: absolute;
-          bottom: 10px;
-          left: 10px;
-          width: 56px;
-          border-radius: 4px;
-          padding: 4px 8px;
-          background: var(--color-orange);
-          color: #fff;
-          font-size: 16px;
-          font-family: "Rubik";
-          line-height: 150%;
-        }
-        .card-like-img {
-          position: absolute;
-          top: 8px;
-          right: 8px;
-        }
-        .card--price {
-          width: 262px;
-          padding: 8px;
-          @include mix.df(space-between, space-between, row);
-          a {
-            font-family: "Rubik";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 150%;
-            color: #414141;
-            p {
-              font-family: "Rubik";
-              font-style: normal;
-              font-weight: 400;
-              font-size: 12px;
-              line-height: 150%;
-              color: #bfbfbf;
-            }
-          }
-          .a-two {
-            font-family: "Rubik";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 150%;
-            color: #606060;
-          }
-        }
-        .card--button {
-          padding: 8px;
-          @include mix.df(start, start, column);
-          gap: 8px;
-          p {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            font-family: "Rubik";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 150%;
-            color: #414141;
-          }
-          button {
-            @include mix.card-btn;
-          }
-        }
-      }
     }
   }
 }

@@ -25,7 +25,7 @@ products
   .slice(0, 4)
   .map((item) => {
     htmlDiscountProducts += `
-    <div class="stock__footer--card">
+    <div class="stock__footer--card card">
     <div class="card--img">
       <img src="${item.images[0]}" alt="" />
       <img
@@ -78,7 +78,7 @@ document.querySelector(".stock__footer").innerHTML = htmlDiscountProducts;
 let newLastProducts = "";
 
 products.slice(-4).map((item) => {
-  newLastProducts += `<div class="stock__footer--card">
+  newLastProducts += `<div class="stock__footer--card card">
   <div class="card--img">
     <img src="${item.images[0]}" alt="" />
     <img
@@ -126,7 +126,7 @@ let RatingProducts = productsCopy
   .slice(-4)
   .map(
     (item) =>
-      (lastRatingProducts += `<div class="stock__footer--card">
+      (lastRatingProducts += `<div class="stock__footer--card card">
 <div class="card--img">
   <img src="${item.images[0]}" />
   <img
