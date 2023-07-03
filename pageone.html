@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>catalog-product</title>
-    <link rel="stylesheet" href="./css/catalog-product.min.css" />
+    <title>page1</title>
+    <link rel="stylesheet" href="./css/pageone.min.css">
   </head>
   <body>
     <header>
@@ -109,54 +109,11 @@
       </section>
     </header>
     <main>
-      <section class="bread-crump">
-        <div class="item container">
-          <a href="index.html">Главная</a>
-          <img src="./assets/images/categories/next.svg" alt="" />
-          <a href="catalog.html">Каталог</a>
-          <img src="./assets/images/categories/next.svg" alt="" />
-          <a href="catalog-product.html">Молоко, сыр, яйцо</a>
-        </div>
-      </section>
-      <section id="catalog">
-        <div class="catalog container">
-          <div class="catalog__header"></div>
-          <div class="catalog__footer">
-            <div class="catalog__footer-filter">
-              <h3>Фильтр</h3>
-              <div class="filter-body">
-                <div class="filter-body-title">
-                  <h4>Цена</h4>
-                  <button>Очистить</button>
-                </div>
-                <div class="number-input">
-                  <input type="number" placeholder="1" />
-                  <input type="number" placeholder="100" />
-                </div>
-              </div>
-              <div class="filter-footer">
-                <input
-                  type="range"
-                  class="min"
-                  min="0"
-                  max="1000"
-                  value="300"
-                  step="10"
-                />
-                <input
-                  type="range"
-                  class="max"
-                  min="0"
-                  max="1000"
-                  value="700"
-                  step="10"
-                />
-              </div>
+        <section id="stock">
+            <div class="container ctock">
+             
             </div>
-            <div class="catalog__footer-product"></div>
-          </div>
-        </div>
-      </section>
+          </section>
     </main>
     <footer>
       <div class="container footer">
@@ -186,8 +143,8 @@
         </div>
       </div>
     </footer>
-    <script src="./js/categories-data.js"></script>
     <script src="./js/products-data.js"></script>
-    <script src="./js/catalog-product.js"></script>
+    <script src="./js/categories-data.js"></script>
+    <script src="./js/pageone.js"></script>
   </body>
 </html>

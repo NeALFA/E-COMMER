@@ -1,5 +1,4 @@
 ///////// Dropdown toggle code start
-
 const btn = document.querySelectorAll(".nav-hamburger button img");
 const toggle = document.querySelector(".toggle");
 
@@ -17,8 +16,8 @@ btn.forEach((el) =>
   })
 );
 // Dropdown toggle code end
-///////// Discount card code start
 
+///////// Discount card code start
 let htmlDiscountProducts = "";
 products
   .filter((el) => el.discount > 0)
@@ -73,8 +72,8 @@ products
   });
 document.querySelector(".stock__footer").innerHTML = htmlDiscountProducts;
 // Discoun card code end
-///////// NewCard code start
 
+///////// NewCard code start
 let newLastProducts = "";
 
 products.slice(-4).map((item) => {
@@ -117,8 +116,8 @@ products.slice(-4).map((item) => {
 
 document.querySelector(".novinki__footer").innerHTML = newLastProducts;
 // NewCard code end
-///////// Rating card code start
 
+///////// Rating card code start
 let lastRatingProducts = "";
 let productsCopy = [...products];
 let RatingProducts = productsCopy
@@ -165,8 +164,8 @@ let RatingProducts = productsCopy
 
 document.querySelector(".bought__footer").innerHTML = lastRatingProducts;
 // Rating card code  end
-///////// Ap-Tab code start
 
+///////// Ap-Tab code start
 const tabBTN = document.querySelectorAll(".tab-button button");
 const tabContent = document.querySelectorAll(".tab-content");
 
@@ -193,8 +192,8 @@ tabBTN.forEach((el, i) => {
   });
 });
 // Ap-Tab code end
-///////// Search code start
 
+///////// Search code start
 const searchInput = document.querySelector(".search-input");
 searchInput.addEventListener("input", () => {
   let searchInputProducts = "";
@@ -219,6 +218,7 @@ searchInput.addEventListener("input", () => {
   document.querySelector(".search__input2").innerHTML = searchInputProducts;
 });
 // Search code end
+
 ///////// Modal code start
 
 const login = document.querySelector(".nav-right-login");

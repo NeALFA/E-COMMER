@@ -1,19 +1,30 @@
-const btn = document.querySelector(".nav-hamburger button img");
-const toggle = document.querySelector(".toggle");
 const searching = document.querySelector(".search-input");
-// toggle navbar
-btn.addEventListener("click", () => {
-  if (toggle.style.height == "0px") {
-    toggle.style.height = "auto";
-    toggle.style.paddingTop = "40px";
-    toggle.style.paddingBottom = "40px";
-  } else {
-    toggle.style.height = "0";
-    toggle.style.paddingTop = "0";
-    toggle.style.paddingBottom = "0";
-  }
-});
+const btn = document.querySelectorAll(".nav-hamburger button img");
+const toggle = document.querySelector(".toggle");
+const productsRow = document.querySelector(".product__footer");
+const searchInput = document.querySelector(".search-input");
+const pagination = document.querySelector(".pagination");
+const login = document.querySelector(".nav-right-login");
+const modal = document.querySelector("#modal");
+const closeBtn = document.querySelector(".modal-close-btn");
 
+/////Dropdown start
+btn.forEach((el) =>
+  el.addEventListener("click", () => {
+    if (toggle.style.height == "0px") {
+      toggle.style.height = "auto";
+      toggle.style.paddingTop = "40px";
+      toggle.style.paddingBottom = "40px";
+    } else {
+      toggle.style.height = "0";
+      toggle.style.paddingTop = "0";
+      toggle.style.paddingBottom = "0";
+    }
+  })
+);
+/////Dropdown end
+
+///// Pagination start
 function allProducts() {
   let productsAll = "";
   products.map((item) => {
@@ -68,10 +79,6 @@ function allProducts() {
 
 allProducts();
 
-let productsRow = document.querySelector(".product__footer");
-let searchInput = document.querySelector(".search-input");
-let pagination = document.querySelector(".pagination");
-
 let search = "";
 
 let page = 1;
@@ -90,7 +97,7 @@ function getProductCard(item) {
         src="./assets/images/home/icon-like.svg"
         alt=""
       />
-      ${item.discount > 0 ? `<p class="discount">${item.discount} %</p>` : ''}
+      ${item.discount > 0 ? `<p class="discount">${item.discount} %</p>` : ""}
     </div>
     <div class="card--price">
       <div>
@@ -187,3 +194,22 @@ function getPage(p) {
   productsRow.innerHTML = ``;
   getProducts();
 }
+///// Pagination end
+
+///// Modal start
+
+login.addEventListener("click", function () {
+  if (modal.style.marginTop <= "0px") {
+    modal.style.marginTop = "0px";
+    modal.style.opacity = "1";
+    modal.style.zIndex = "999";
+  }
+});
+closeBtn.addEventListener("click", function () {
+  if (modal.style.marginTop == "0px") {
+    modal.style.marginTop = "-1500px";
+    modal.style.opacity = "0";
+    modal.style.zIndex = "-999999";
+  }
+});
+///// Modal end

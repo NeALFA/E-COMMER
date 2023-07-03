@@ -1,0 +1,37 @@
+@use "../global";
+@use "../layout/header";
+@use "../components/card";
+@use "../base/typography";
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+
+#stock {
+  background-color: var(--main-bg);
+  .stock {
+    &__header {
+      z-index: -99999;
+      @include mix.df(space-between, end);
+      h2 {
+        @include mix.title-2;
+      }
+      a {
+        @include mix.df(center);
+        gap: 16.5px;
+        p {
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: var(--color-grey);
+        }
+      }
+    }
+    &__footer {
+      padding-top: 40px;
+      @include mix.df(space-between, center, row);
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  }
+}
