@@ -52,6 +52,10 @@
       @include mix.df(space-between, center, row);
       flex-wrap: wrap;
       gap: 40px;
+      @media (max-width: 905px) {
+        gap: 20px;
+        justify-content: center;
+      }
     }
   }
 }

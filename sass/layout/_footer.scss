@@ -13,6 +13,14 @@ footer {
     @media (max-width: 1050px) {
       padding-bottom: 110px;
     }
+    @media (max-width: 730px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    @media (max-width: 730px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
     &-nav ul {
       @include mix.df(space-between, center, row);
       gap: 40px;
@@ -36,6 +44,10 @@ footer {
         gap: 16px;
         @media (max-width: 960px) {
           gap: 5px;
+        }
+        @media (max-width: 850px) {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr;
         }
       }
       &-aftr {

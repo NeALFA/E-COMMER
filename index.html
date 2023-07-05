@@ -36,7 +36,7 @@
         <div class="nav-right">
           <div class="nav-hamburger nav-right-hamburg">
             <button>
-              <img src="./assets/images/home/menu.svg" alt="" />
+              <img src="./assets/images/home/menu2.svg" alt="" />
               <p>Каталог</p>
             </button>
           </div>
@@ -71,8 +71,8 @@
           </div>
         </div>
       </nav>
-      <div id="toggle">
-        <div class="toggle container">
+      <div id="toggle" class="container">
+        <div class="toggle">
           <a href="#">Молоко, сыр, яйцо</a>
           <a href="#">Напитки</a>
           <a href="#">Бакалея</a>
@@ -120,10 +120,7 @@
         <div class="container ctock">
           <div class="stock__header" style="padding-top: 80px">
             <h2>Акции</h2>
-            <a
-              href="./pageone.html"
-              onclick="localStorage.setItem('category', 'Акции')"
-            >
+            <a href="./pageone.html" onclick="localStorage.category='Акции'">
               <p>Все продукты</p>
               <img src="./assets/images/home/icon-next.svg" alt="" />
             </a>
@@ -355,15 +352,8 @@
         </div>
       </div>
     </footer>
-    <script src="js/products-data.js"></script>
+    <script src="./js/products-data.js"></script>
+    <script src="./js/main.js"></script>      
     <script src="./js/home.js"></script>
   </body>
 </html>
-
-<!-- <div class="search__input-box">
-  <div class="search__input-card">
-    <img src="./assets/images/products/1.png" alt="" />
-    <h3>Broccoli</h3>
-    <p>70.4 ₽</p>
-  </div>
-</div> -->

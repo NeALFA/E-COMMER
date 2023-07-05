@@ -60,7 +60,7 @@ header .navbar {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding: 13px 0;
+  padding: 13px;
   gap: 40px;
 }
 header .navbar .nav-left {
@@ -125,15 +125,15 @@ header .navbar .nav-left .nav-hamburger .search__input .search__input2 {
   display: none;
   overflow: auto;
   width: 360px;
-  background-color: rgba(200, 200, 200, 0.9);
+  max-height: 500px;
+  overflow-y: scroll;
+  background-color: rgba(252, 213, 186, 0.8);
   padding: 18px;
   border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 5px;
 }
-@media (max-width: 650px) {
-  header .navbar .nav-left .nav-hamburger .search__input .search__input2 {
-    width: 100%;
-  }
+header .navbar .nav-left .nav-hamburger .search__input .search__input2::-webkit-scrollbar {
+  display: none;
 }
 header .navbar .nav-left .nav-hamburger .search__input .search-input {
   width: 360px;
@@ -196,13 +196,14 @@ header .navbar .nav-left .nav-hamburger .search__input .search__input-box .searc
 }
 header .navbar .nav-right {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 24px;
   width: 100%;
 }
 header .navbar .nav-right-hamburg button, header .navbar .nav-right-like a, header .navbar .nav-right-product a, header .navbar .nav-right-basket a {
+  width: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,7 +219,7 @@ header .navbar .nav-right-hamburg button p, header .navbar .nav-right-like a p, 
   line-height: 150%;
   color: #414141;
 }
-header .navbar .nav-right-hamburg button {
+header .navbar .nav-right-hamburg {
   display: none;
 }
 header .navbar .nav-right-login {
@@ -254,15 +255,17 @@ header .navbar .nav-right-login p {
     padding: 20px;
     position: fixed;
     z-index: 999999;
+    left: 0;
     bottom: 0px;
   }
 }
 @media (max-width: 700px) {
-  header .navbar .nav-right-hamburg button {
+  header .navbar .nav-right-hamburg {
     display: block;
   }
 }
 header .toggle {
+  padding-left: 20px;
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -437,6 +440,18 @@ footer .footer {
     padding-bottom: 110px;
   }
 }
+@media (max-width: 730px) {
+  footer .footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+@media (max-width: 730px) {
+  footer .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 footer .footer-nav ul {
   display: flex;
   justify-content: space-between;
@@ -476,6 +491,12 @@ footer .footer-contact-social {
     gap: 5px;
   }
 }
+@media (max-width: 850px) {
+  footer .footer-contact-social {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 footer .footer-contact-aftr {
   display: flex;
   justify-content: space-between;
@@ -494,14 +515,30 @@ footer .footer-contact-aftr a {
   width: 100%;
   background-color: #fff;
   position: relative;
+  transition: 0.5s;
+}
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0px 28px 23px 11px rgba(255, 102, 51, 0.65);
+  -webkit-box-shadow: 0px 28px 23px 11px rgba(255, 102, 51, 0.65);
+  -moz-box-shadow: 0px 28px 23px 11px rgba(255, 102, 51, 0.65);
+}
+.card:hover .discount {
+  bottom: 10px;
+  left: 10px;
+}
+.card:hover .card-like-img {
+  top: 8px;
+  right: 8px;
 }
 .card .card--img {
   position: relative;
+  overflow: hidden;
 }
 .card .discount {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: -40px;
+  left: -40px;
   width: 56px;
   border-radius: 4px;
   padding: 4px 8px;
@@ -510,14 +547,17 @@ footer .footer-contact-aftr a {
   font-size: 16px;
   font-family: "Rubik";
   line-height: 150%;
+  transition: 0.5s;
 }
 .card .card-like-img {
+  transition: 0.5s;
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: -98px;
+  right: -98px;
 }
 .card .card--price {
-  width: 262px;
+  max-width: 262px;
+  width: 100%;
   padding: 8px;
   display: flex;
   justify-content: space-between;
@@ -655,6 +695,12 @@ footer .footer-contact-aftr a {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
+}
+@media (max-width: 905px) {
+  #stock .stock__footer {
+    gap: 20px;
+    justify-content: center;
+  }
 }
 
 #special {

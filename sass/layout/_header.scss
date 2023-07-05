@@ -10,7 +10,7 @@ header {
   box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.1);
   .navbar {
     @include mix.df(space-between, center, row);
-    padding: 13px 0;
+    padding: 13px;
     gap: 40px;
     .nav-left {
       @include mix.df(space-between, center, row);
@@ -53,13 +53,15 @@ header {
             display: none;
             overflow: auto;
             width: 360px;
-            @media (max-width: 650px) {
-              width: 100%;
-            }
-            background-color: rgba(200, 200, 200, 0.9);
+            max-height: 500px;
+            overflow-y: scroll;
+            background-color:rgba(252, 213, 186, 0.8);
             padding: 18px;
             border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+            border-bottom-right-radius: 5px;
+            &::-webkit-scrollbar {
+            display: none;
+            }
           }
           .search-input {
             width: 360px;
@@ -116,13 +118,14 @@ header {
       }
     }
     .nav-right {
-      @include mix.df(space-between, center, row);
+      @include mix.df(center, center, row);
       gap: 24px;
       width: 100%;
       &-hamburg button,
       &-like a,
       &-product a,
       &-basket a {
+        width: 65px;
         @include mix.df(center, center, column);
         gap: 10px;
         background-color: #fff;
@@ -135,7 +138,7 @@ header {
           color: #414141;
         }
       }
-      &-hamburg button {
+      &-hamburg {
         display: none;
       }
       &-login {
@@ -162,16 +165,18 @@ header {
         padding: 20px;
         position: fixed;
         z-index: 999999;
+        left: 0;
         bottom: 0px;
       }
       @media (max-width: 700px) {
-        &-hamburg button {
+        &-hamburg{
           display: block;
         }
       }
     }
   }
   .toggle {
+    padding-left: 20px;
     @include mix.df(space-between, start, row);
     flex-wrap: wrap;
     height: 0px;
@@ -196,7 +201,7 @@ header {
   height: 100vh;
   top: 0;
   margin-top: -1500px;
-  opacity:0;
+  opacity: 0;
   transition: 0.5s;
   background: rgba(252, 213, 186, 0.8);
   @include mix.df(center, center, row);
