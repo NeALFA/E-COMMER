@@ -16,7 +16,7 @@ btn.forEach((el) =>
     }
   })
 );
-// Dropdown toggle code end 
+// Dropdown toggle code end
 
 ///////// Search code start
 const searchInput = document.querySelector(".search-input");
@@ -64,3 +64,23 @@ closeBtn.addEventListener("click", function () {
   }
 });
 // Modal code end
+
+////// Like code start
+const likedProds = [];
+
+const likeProduct = (id) => {
+  if (localStorage.getItem("like")) {
+    likedProds.concat(JSON.parse(localStorage.getItem("like")));
+    if (!likedProds.includes(products.find((prod) => prod.id === id))) {
+      likedProds.push(products.find((prod) => prod.id === id));
+      localStorage.setItem("like", JSON.stringify(likedProds));
+    } else {
+      likedProds.splice(likedProds.indexOf(products.find((prod) => prod.id === id)), 1);
+      localStorage.setItem("like", JSON.stringify(likedProds));
+    }
+  } else {
+    likedProds.push(products.find((prod) => prod.id === id));
+    localStorage.setItem("like", JSON.stringify(likedProds));
+  }
+};
+// Like code end

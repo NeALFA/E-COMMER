@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite</title>
+    <link rel="stylesheet" href="./css/favorites.min.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="navbar container">
+        <div class="nav-left">
+          <div class="nav-logo">
+            <a href="index.html">
+              <img src="./assets/images/home/logo.svg" alt="" />
+            </a>
+          </div>
+          <div class="nav-hamburger">
+            <button>
+              <img src="./assets/images/home/menu.svg" alt="" />
+              <a href="./catalog.html">
+                <p>Каталог</p>
+              </a>
+            </button>
+            <div class="search__input">
+              <input
+                class="search-input"
+                type="search"
+                placeholder="Найти товар"
+              />
+              <div class="search__input2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-right">
+          <div class="nav-hamburger nav-right-hamburg">
+            <button>
+              <img src="./assets/images/home/menu.svg" alt="" />
+              <p>Каталог</p>
+            </button>
+          </div>
+          <div class="nav-right-like">
+            <a href="#">
+              <img src="./assets/images/home/like.svg" alt="" />
+              <p>Избранное</p>
+            </a>
+          </div>
+          <div class="nav-right-product">
+            <a href="./allproducts.html">
+              <img src="./assets/images/home/product.svg" alt="" />
+              <p>продукты</p>
+            </a>
+          </div>
+          <div class="nav-right-basket">
+            <a href="#">
+              <img src="./assets/images/home/basket.svg " alt="" />
+              <p>Корзина</p>
+            </a>
+          </div>
+          <div class="nav-right-login">
+            <img src="./assets/images/home/login.svg" alt="" />
+            <p>Алексей</p>
+            <button style="background-color: transparent">
+              <img
+                src="./assets/images/home/stat-minus.svg"
+                style="width: 24px; margin: 8px"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div id="toggle">
+        <div class="toggle container">
+          <a href="#">Молоко, сыр, яйцо</a>
+          <a href="#">Напитки</a>
+          <a href="#">Бакалея</a>
+          <a href="#">Непродовольственные товары</a>
+          <a href="#">Хлеб</a>
+          <a href="#">Кондитерские изделия</a>
+          <a href="#">Здоровое питание</a>
+          <a href="#">Детское питание</a>
+          <a href="#">Фрукты и овощи</a>
+          <a href="#">Чай, кофе</a>
+          <a href="#">Зоотовары</a>
+          <a href="#">Мясо, птица, колбаса</a>
+          <a href="#">Замороженные продукты</a>
+        </div>
+      </div>
+      <section id="modal">
+        <div class="container modal">
+          <button class="modal-close-btn">
+            <img src="./assets/images/home/close.svg" alt="" />
+          </button>
+          <h2>Вход</h2>
+          <div class="modal__input">
+            <label for="tel">Телефон</label>
+            <input id="tel" type="text" placeholder="+998" />
+          </div>
+          <div class="modal__btn">
+            <button class="enter-btn">Вход</button>
+            <div>
+              <button class="registr-btn">Регистрация</button>
+              <a href="#" class="help-parol">Забыли пароль?</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="bread-crump">
+      <div class="item container">
+        <a href="index.html">Главная</a>
+        <img src="./assets/images/categories/next.svg" alt="" />
+        <a href="favorites.html">Избраное</a>
+      </div>
+    </section>
+    <main>
+      <section id="favorite">
+        <div class="favorite container">
+          <div class="favorite__header">
+            <h2>Избраное</h2>
+          </div>
+          <div class="favorite__footer">
+            <div class="favorite__footer-filter">
+              <h3>Фильтр</h3>
+              <div class="filter-body">
+                <div class="filter-body-title">
+                  <h4>Цена</h4>
+                  <button>Очистить</button>
+                </div>
+                <div class="number-input">
+                  <input type="number" placeholder="1" />
+                  <input type="number" placeholder="100" />
+                </div>
+              </div>
+              <div class="filter-footer">
+                <input
+                  type="range"
+                  class="min"
+                  min="0"
+                  max="1000"
+                  value="300"
+                  step="10"
+                />
+                <input
+                  type="range"
+                  class="max"
+                  min="0"
+                  max="1000"
+                  value="700"
+                  step="10"
+                />
+              </div>
+            </div>
+            <div class="favorite__footer-product">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer">
+        <div class="footer-logo">
+          <img src="./assets/images/home/logo-2.svg" alt="" />
+        </div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Статьи</a></li>
+            <li><a href="#">Политика обработки персональных данных</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-social">
+            <img src="./assets/images/home/instagram.svg" alt="" />
+            <img src="./assets/images/home/vkontakte.svg" alt="" />
+            <img src="./assets/images/home/facebook.svg" alt="" />
+            <img src="./assets/images/home/ok.svg" alt="" />
+          </div>
+          <div class="footer-contact-aftr">
+            <img src="./assets/images/home/phone.svg" alt="" />
+            <a href="tel:+998946281025">+998946281025</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/products-data.js"></script>
+    <script src="./js/categories-data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/favorite.js"></script>
+  </body>
+</html>

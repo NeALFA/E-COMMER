@@ -51,7 +51,7 @@
     width: 100%;
     padding: 8px;
     @include mix.df(space-between, space-between, row);
-    a {
+    .a-one{
       font-family: "Rubik";
       font-style: normal;
       font-weight: 700;

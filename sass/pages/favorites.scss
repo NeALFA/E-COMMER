@@ -1,0 +1,105 @@
+@use "../global";
+@use "../components/card";
+@use "../components/bread-crump";
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+@use "../base/typography";
+
+#favorite {
+  background-color: var(--main-bg);
+  .favorite {
+    padding-top: 44px;
+    &__header {
+      h2 {
+        @include mix.title-2;
+      }
+    }
+    &__footer {
+      @include mix.df(start, start, row);
+      gap: 40px;
+      padding-top: 40px;
+      padding-bottom: 80px;
+      &-filter {
+        max-width: 272px;
+        h3 {
+          width: 272px;
+          padding: 10px;
+          border-radius: 4px;
+          font-size: 16px;
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 700;
+          line-height: 150%;
+          background: #f3f2f1;
+          color: var(--fontColor-black);
+        }
+        .filter-body-title {
+          padding: 40px 13px;
+          @include mix.df(space-between, center, row);
+          h4 {
+            color: #000;
+            font-size: 16px;
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+          }
+          button {
+            width: 85px;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            color: var(--color-grey);
+          }
+        }
+        .number-input {
+          @include mix.df(space-between, center, row);
+          gap: 25px;
+          position: relative;
+          input {
+            max-width: 124px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid var(--grayscale-light, #bfbfbf);
+            background: var(--main-surface, #fff);
+          }
+        }
+        .filter-footer {
+          padding-top: 25px;
+          position: relative;
+          input {
+            -webkit-appearance: none;
+            width: 100%;
+            &::-webkit-slider-runnable-track {
+              height: 7px;
+              cursor: pointer;
+              background: #2403ff;
+              border-radius: 14px;
+            }
+          }
+          input::-webkit-slider-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: red;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -9.5px;
+          }
+          input:focus::-webkit-slider-runnable-track {
+            background: red;
+          }
+        }
+      }
+      &-product {
+        @include mix.df(space-between, center, row);
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+    }
+  }
+}

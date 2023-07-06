@@ -4,11 +4,11 @@ products
   .filter((el) => el.discount > 0)
   .slice(0, 4)
   .map((item) => {
-    htmlDiscountProducts += `
+    htmlDiscountProducts += ` 
     <div class="stock__footer--card card">
     <div class="card--img">
       <img src="${item.images[0]}" alt="" />
-      <img
+      <img onclick="likeProduct(${item.id})"
         class="card-like-img"
         src="./assets/images/home/icon-like.svg"
         alt=""
@@ -17,7 +17,7 @@ products
     </div>
     <div class="card--price">
       <div>
-        <a href="#"
+        <a class="a-one" href="#"
           >${item.price - (item.price * item.discount) / 100} ₽
           <p>С картой</p>
         </a>
@@ -30,6 +30,8 @@ products
       </div>
     </div>
     <div class="card--button">
+    <a href="product.html">
+
       <p>
         ${item.description}
       </p>
@@ -46,6 +48,7 @@ products
       })
       .join("")}
       </div>
+      </a>
       <button>В корзину</button>
     </div>
   </div>
@@ -61,7 +64,7 @@ products.slice(-4).map((item) => {
   newLastProducts += `<div class="stock__footer--card card">
   <div class="card--img">
     <img src="${item.images[0]}" alt="" />
-    <img
+    <img onclick="likeProduct(${item.id})"
       class="card-like-img"
       src="./assets/images/home/icon-like.svg"
       alt=""
@@ -69,13 +72,13 @@ products.slice(-4).map((item) => {
   </div>
   <div class="card--price">
     <div>
-      <a href="#">${item.price} ₽ </a>
+      <a class="a-one" href="#">${item.price} ₽ </a>
     </div>
   </div>
   <div class="card--button">
+  <a href="product.html">
     <p>
-      Г/Ц Блинчики с мясом вес, <br />
-      Россия
+      ${item.description}
     </p>
     <div class="card-star">
     ${Array(Math.round(item.rating))
@@ -90,6 +93,7 @@ products.slice(-4).map((item) => {
     })
     .join("")}
     </div>
+    </a>
     <button>В корзину</button>
   </div>
 </div>`;
@@ -109,7 +113,7 @@ let RatingProducts = productsCopy
       (lastRatingProducts += `<div class="stock__footer--card card">
 <div class="card--img">
   <img src="${item.images[0]}" />
-  <img
+  <img onclick="likeProduct(${item.id})"
     class="card-like-img"
     src="./assets/images/home/icon-like.svg"
     alt=""
@@ -117,11 +121,11 @@ let RatingProducts = productsCopy
 </div>
 <div class="card--price">
   <div>
-    <a href="#">44,50 ₽ </a>
+    <a class="a-one" href="#">${item.price} ₽ </a>
   </div>
 </div>
 <div class="card--button">
-<h1>${item.name}</h1>
+<a href="product.html">
   <p>
     ${item.description}
   </p>
@@ -138,6 +142,7 @@ let RatingProducts = productsCopy
         })
         .join("")}
   </div>
+  </a>
   <button>В корзину</button>
 </div>
 </div>`)
@@ -173,6 +178,3 @@ tabBTN.forEach((el, i) => {
   });
 });
 // Ap-Tab code end
-
-
-
